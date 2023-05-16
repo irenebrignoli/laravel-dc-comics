@@ -15,6 +15,7 @@
       <th>Series</th>
       <th>Sale date</th>
       <th>Type</th>
+      <th>Show</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -28,6 +29,7 @@
       <td>{{$comic->series}}</td>
       <td>{{$comic->sale_date}}</td>
       <td>{{$comic->type}}</td>
+      <td><a href="{{route('comics.show', ['comic' => $comic->id])}}" class="btn btn-light">Show</a></td>
     </tr>
     @endforeach
   </tbody>
