@@ -22,10 +22,10 @@
         <p class="card-text">{{$comic->description}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${{$comic->price}}</li>
-        <li class="list-group-item">{{$comic->series}}</li>
-        <li class="list-group-item">{{$comic->sale_date}}</li>
-        <li class="list-group-item">{{$comic->type}}</li>
+        <li class="list-group-item fw-bold">Price: <span class="fw-normal">${{$comic->price}}</span></li>
+        <li class="list-group-item fw-bold">Series: <span class="fw-normal">{{$comic->series}}</span></li>
+        <li class="list-group-item fw-bold">Sale date: <span class="fw-normal">{{$comic->sale_date}}</span></li>
+        <li class="list-group-item fw-bold">Type: <span class="fw-normal">{{$comic->type}}</span></li>
       </ul>
     </div>
 

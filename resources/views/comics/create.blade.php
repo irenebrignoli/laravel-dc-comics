@@ -15,12 +15,12 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Description:</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <textarea type="text" class="form-control" id="description" name="description" placeholder="optional..."></textarea>
         </div>
 
         <div class="mb-3">
             <label for="thumb" class="form-label">Image url</label>
-            <input type="text" class="form-control" id="thumb" name="thumb">
+            <input type="text" class="form-control" id="thumb" name="thumb" placeholder="optional...">
         </div>
 
         <div class="mb-3">
@@ -35,12 +35,12 @@
 
         <div class="mb-3">
             <label for="sale_date" class="form-label">Sale date:</label>
-            <textarea class="form-control" id="sale_date" name="sale_date"></textarea>
+            <input class="form-control" id="sale_date" name="sale_date">
         </div>
 
         <div class="mb-3">
           <label for="type" class="form-label">Type:</label>
-          <textarea class="form-control" id="type" name="type"></textarea>
+          <input class="form-control" id="type" name="type">
       </div>
 
         <button type="submit" class="btn btn-primary">Save data</button>
