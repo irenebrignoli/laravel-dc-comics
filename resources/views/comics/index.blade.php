@@ -30,15 +30,23 @@
       <td class="d-flex gap-2">
         <a href="{{route('comics.show', ['comic' => $comic->id])}}" class="btn btn-success">Show</a>
         <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="btn btn-warning">Edit</a>
-        <form action="{{route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="btn btn-dark"><i class="fa-regular fa-trash-can"></i></button>
-        </form>
+        <button class="btn btn-dark getAlert" ><i class="fa-regular fa-trash-can"></i></button>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+<div id="alert" class="alert alert-warning position-absolute top-50 start-50 translate-middle d-none">
+  Are you sure you want to delete item?
+  <form action="{{route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
+    @csrf
+    @method('DELETE')
+    <div class="mt-3">
+      <button type="submit" class="btn btn-danger me-2">Yes</button>
+      <a id="removeAlert" class="btn btn-dark">No</a>
+    </div>
+  </form>
+</div>
 
 @endsection
