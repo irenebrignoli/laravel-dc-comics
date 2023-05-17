@@ -9,7 +9,11 @@
   <div class="d-flex justify-content-center gap-2">
 
     <div>
-      <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+      @if ($comic->thumb )
+        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+      @else
+        <p>No image</p>
+      @endif
     </div>
 
     <div class="card" style="width: 50rem;">
