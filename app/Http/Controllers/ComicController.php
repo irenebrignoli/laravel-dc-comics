@@ -63,7 +63,8 @@ class ComicController extends Controller
 
         $newComic->save();
 
-        return redirect()->route('comics.show', ['comic' => $newComic->id]);
+        return redirect()->route('comics.show', ['comic' => $newComic->id])
+        ->with('status', 'Comic sucessfull added!');
     }
 
     /**
@@ -116,7 +117,8 @@ class ComicController extends Controller
         $form_data = $request->all();
         $comic->update($form_data);
 
-        return redirect()->route('comics.show', ['comic' => $comic->id]);
+        return redirect()->route('comics.show', ['comic' => $comic->id])
+        ->with('status', 'Comic sucessfull modified!');
     }
 
     /**

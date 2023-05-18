@@ -1,1 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    background-image: url("https://img.freepik.com/premium-vector/black-white-comic-book-page-background-pop-art-style-with-empty-space-template-with-rays-dots-halftone-effect-texture-vector-illustration_515038-4149.jpg?w=2000");
+    background-position: center;
+    background-size: cover;
+}
+
+.main-title {
+    font-family: "Permanent Marker", cursive;
+    font-size: 60px;
+    color: crimson;
+}

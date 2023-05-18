@@ -4,6 +4,6 @@
 
 @section('content')
 
-<h1 class="text-center">Fumetti per tutti</h1>
+<h1 class="main-title text-center">Comics world</h1>
 
 @endsection
