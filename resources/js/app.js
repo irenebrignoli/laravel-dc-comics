@@ -3,15 +3,22 @@ import "~resources/scss/app.scss";
 import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**"]);
 
-const alert = document.querySelector("#alert");
-const removeAlert = document.querySelector("#removeAlert");
+const deleteBtns = document.querySelectorAll(".formDelete");
 
-document.querySelectorAll(".getAlert").forEach((item) => {
-    item.addEventListener("click", () => {
-        alert.classList.remove("d-none");
+deleteBtns.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const modal = document.getElementById("alertId");
+
+        const bootstrapModal = new bootstrap.Modal(modal);
+
+        bootstrapModal.show();
+
+        const confirmDeletebtn = modal.querySelector(".btn.btn-danger");
+
+        confirmDeletebtn.addEventListener("click", () => {
+            button.submit();
+        });
     });
-});
-
-removeAlert.addEventListener("click", function () {
-    alert.classList.add("d-none");
 });

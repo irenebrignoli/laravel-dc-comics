@@ -30,23 +30,37 @@
       <td class="d-flex gap-2">
         <a href="{{route('comics.show', ['comic' => $comic->id])}}" class="btn btn-success">Show</a>
         <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="btn btn-warning">Edit</a>
-        <button class="btn btn-dark getAlert" ><i class="fa-regular fa-trash-can"></i></button>
+        <form class="formDelete" action="{{route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
+          @csrf
+          @method('DELETE')
+          <div >
+            <button type="submit" class="btn btn-dark" data-bs-toggle="modal" ><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </form>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
 
-<div id="alert" class="alert alert-warning position-absolute top-50 start-50 translate-middle d-none">
-  Are you sure you want to delete item?
-  <form action="{{route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
-    @csrf
-    @method('DELETE')
-    <div class="mt-3">
-      <button type="submit" class="btn btn-danger me-2">Yes</button>
-      <a id="removeAlert" class="btn btn-dark">No</a>
+<div id="alertId" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete item?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Save changes</button>
+      </div>
     </div>
-  </form>
+  </div>
 </div>
+
+
+
 
 @endsection

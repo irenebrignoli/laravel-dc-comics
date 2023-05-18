@@ -36,12 +36,12 @@
 
   <div class="mb-3">
       <label for="sale_date" class="form-label">Sale date:</label>
-      <input class="form-control" id="sale_date" name="sale_date" value="{{$comic->sale_date}}">
+      <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{$comic->sale_date}}">
   </div>
 
   <div class="mb-3">
     <label for="type" class="form-label">Type:</label>
-    <input class="form-control" id="type" name="type" value="{{$comic->type}}">
+    <input type="text" class="form-control" id="type" name="type" value="{{$comic->type}}">
 </div>
 
   <button type="submit" class="btn btn-primary">Save data</button>
