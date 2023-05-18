@@ -19,7 +19,21 @@
 
   <main class="my-5">
     <div class="container">
+
+      @if ($errors->any())
+        <div class="error-message d-flex justify-content-center">
+          <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+          </div>
+        </div>
+      @endif
+
       @yield('content')
+
     </div>
   </main>
 
